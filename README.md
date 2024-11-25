@@ -49,7 +49,7 @@ Hal yang perlu diperhatikan sebelum hands-on
    ```
 3. **Mengkloning repository pelatihan**
    ```
-   git clone https://github.com/hpc-mahameru/Bioinformatics-User-Meeting.git
+   git clone 
    ```
 
 4. **Membuat folder proyek untuk menyimpan data input dan output**
