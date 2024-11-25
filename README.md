@@ -61,7 +61,8 @@ Hal yang perlu diperhatikan sebelum hands-on
    cd ~/Latihan-Penggunaan-HPC---Tim-Pisang
    ls
    ```
-   <img width="514" alt="image" src="https://github.com/user-attachments/assets/fded8ec7-1366-48e9-927b-499f43ecc328">
+   <img width="640" alt="image" src="https://github.com/user-attachments/assets/2a5e8f9a-3983-4b68-be72-fa9daf0f6204">
+
 
 5. **Mengunduh data mentah dengan wget (JANGAN DILAKUKAN SAAT TRAINING)**
    Gunakan perintah ```wget``` untuk mengunduh data.
@@ -86,7 +87,8 @@ Hal yang perlu diperhatikan sebelum hands-on
    cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/raw_data
    ls
    ```
-   <img width="452" alt="image" src="https://github.com/user-attachments/assets/5bb3ba3f-6775-4725-8193-ea29a9f32513">
+   <img width="451" alt="image" src="https://github.com/user-attachments/assets/ce67d2f6-7218-46c5-80d7-078fd5e18e27">
+
 
 6. **Mempersiapkan software/tools menjadi dapat diakses**
 
@@ -98,12 +100,11 @@ Hal yang perlu diperhatikan sebelum hands-on
 7. **Bekerja dengan menggunakan skrip job**
 
    ```
-   cd ~
-   cd Latihan-Penggunaan-HPC---Tim-Pisang/template_submision
+   cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/template_submision
    less contoh.sh
    ```
-   <img width="834" alt="Screenshot 2024-05-05 at 19 45 45" src="https://github.com/hpc-mahameru/Bioinformatics-User-Meeting/assets/57382343/cc6659da-3e08-4ffb-8ac4-3d201ee14be0">
-   
+   <img width="1219" alt="image" src="https://github.com/user-attachments/assets/a6954023-660d-43d0-acd2-a70d1e20aeaa">
+
     ```
    sbatch contoh.sh
    squeue
