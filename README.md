@@ -49,57 +49,51 @@ Hal yang perlu diperhatikan sebelum hands-on
    ```
 3. **Mengkloning repository pelatihan**
    ```
-   git clone 
+   git clone https://github.com/herlianal12/Latihan-Penggunaan-HPC---Tim-Pisang.git
    ```
 
 4. **Membuat folder proyek untuk menyimpan data input dan output**
    ```
-   cd ~/Bioinformatics-User-Meeting
+   cd Latihan-Penggunaan-HPC---Tim-Pisang
    mkdir -p training
    cd training
-   mkdir raw_data quality_control
-   cd ~
+   mkdir raw_data
+   cd ~/Latihan-Penggunaan-HPC---Tim-Pisang
+   ls
    ```
+   <img width="514" alt="image" src="https://github.com/user-attachments/assets/fded8ec7-1366-48e9-927b-499f43ecc328">
 
-5. **Mengunduh data mentah dengan wget**
+5. **Mengunduh data mentah dengan wget (JANGAN DILAKUKAN SAAT TRAINING)**
    Gunakan perintah ```wget``` untuk mengunduh data.
    Sebelumnya, kembali ke home terlebih dahulu
    ```
-   cd ~
+   cd ~/Latihan-Penggunaan-HPC---Tim-Pisang
    ```
    Download raw data untuk training.
    ```
-   wget https://zenodo.org/record/940733/files/illumina_f.fq -P Bioinformatics-User-Meeting/training/raw_data
-   wget https://zenodo.org/record/940733/files/illumina_r.fq -P Bioinformatics-User-Meeting/training/raw_data
-   wget https://zenodo.org/record/940733/files/minion_2d.fq -P Bioinformatics-User-Meeting/training/raw_data
+   wget https://zenodo.org/record/940733/files/illumina_f.fq -P training/raw_data
+   wget https://zenodo.org/record/940733/files/illumina_r.fq -P training/raw_data
+   wget https://zenodo.org/record/940733/files/minion_2d.fq -P training/raw_data
    
    ```
    source: https://training.galaxyproject.org/training-material/topics/assembly/tutorials/unicycler-assembly/tutorial.html
+   
+   **Menyalin data dari database lokal (LAKUKAN INI SAAT TRAINING)**
+   Karena mengunduh data dapat memakan waktu yang lama, untuk training ini kita akan menyalin data yang telah diunduh
 
-6. **Bekerja dengan mode interaktif**
    ```
-   srun --partition=interactive --pty /bin/bash
-   ```
-   Perhatikan nama host-nya, berubah menjadi trembesi91/92
-   ```
-   module load bioinformatics/multiqc/1
-   cd Bioinformatics-User-Meeting/training/quality_control
-   multiqc .
-   exit
-   ```
-
-   Hasil:
-   ```
-   cd ~/Bioinformatics-User-Meeting/training/quality_control
+   cp -r /mgpfs/db/bioinformatics/raw_data ~/Latihan-Penggunaan-HPC---Tim-Pisang/training
+   cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/raw_data
    ls
    ```
-   <img width="594" alt="Screenshot 2024-05-05 at 20 14 12" src="https://github.com/hpc-mahameru/Bioinformatics-User-Meeting/assets/57382343/83d72052-42d0-4c89-b4ca-90eb663ff2f2">
+   <img width="452" alt="image" src="https://github.com/user-attachments/assets/5bb3ba3f-6775-4725-8193-ea29a9f32513">
+
 
 9. **Bekerja dengan menggunakan skrip job**
 
    ```
    cd ~
-   cd Bioinformatics-User-Meeting/template_submision
+   cd Latihan-Penggunaan-HPC---Tim-Pisang/template_submision
    less contoh.sh
    ```
    <img width="834" alt="Screenshot 2024-05-05 at 19 45 45" src="https://github.com/hpc-mahameru/Bioinformatics-User-Meeting/assets/57382343/cc6659da-3e08-4ffb-8ac4-3d201ee14be0">
@@ -112,14 +106,33 @@ Hal yang perlu diperhatikan sebelum hands-on
    
    ```
    cd ~
-   cd Bioinformatics-User-Meeting/training/quality_control
+   cd Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control
    ls
    ```
+
+7. **Bekerja dengan mode interaktif**
+   ```
+   srun --partition=interactive --pty /bin/bash
+   ```
+   Perhatikan nama host-nya, berubah menjadi trembesi91/92
+   ```
+   module load bioinformatics/multiqc/1
+   cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control
+   multiqc .
+   exit
+   ```
+
+   Hasil:
+   ```
+   cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control
+   ls
+   ```
+   <img width="594" alt="Screenshot 2024-05-05 at 20 14 12" src="https://github.com/hpc-mahameru/Bioinformatics-User-Meeting/assets/57382343/83d72052-42d0-4c89-b4ca-90eb663ff2f2">
    
 11. **Transfer data dari HPC Mahameru BRIN ke lokal**
     Memindahkan file html ke folder baru dengan nama html
     ```
-    cd ~/Bioinformatics-User-Meeting/training/quality_control
+    cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control
     mkdir html
     mv *.html html/
     cd html
@@ -131,7 +144,7 @@ Hal yang perlu diperhatikan sebelum hands-on
 
     Contoh:
     ```
-    scp -r lina008@login2.hpc.brin.go.id:~/Bioinformatics-User-Meeting/training/quality_control/html Downloads
+    scp -r lina008@login2.hpc.brin.go.id:~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control/html Downloads
     ```
     Buka masing-masing html file dengan double klik report qc dari masing-masing sampel yang ada di folder Downloads.
 
@@ -155,11 +168,11 @@ Hal yang perlu diperhatikan sebelum hands-on
 2. **Membuat direktori baru**
    ```
    cd ~
-   mkdir Bioinformatics-User-Meeting/training/assembly
+   mkdir Latihan-Penggunaan-HPC---Tim-Pisang/training/assembly
    ```
 3. **Melakukan assembly dengan unicycler**
-   ```
-   cd /mgpfs/home/lina008/Bioinformatics-User-Meeting/template_submision
+   ````
+   cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/template_submision
    sbatch assembly.sh
    ```
    Check log dan hasil assembly:
@@ -172,9 +185,9 @@ Hal yang perlu diperhatikan sebelum hands-on
 4. **Mengevaluasi kualitas assembly dengan quast**
 
    ```
-   cd ~/Bioinformatics-User-Meeting/template_submision
+   cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/template_submision
    sbatch quality_assembly.sh
-   cd ~/Bioinformatics-User-Meeting/training/quality_assembly
+   cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_assembly
    ls
    ```
    <img width="701" alt="Screenshot 2024-05-05 at 21 16 32" src="https://github.com/hpc-mahameru/Bioinformatics-User-Meeting/assets/57382343/c9fdd7fc-2a89-49fe-bc36-20ac310a0fb8">
@@ -194,9 +207,9 @@ Hal yang perlu diperhatikan sebelum hands-on
 
 6. **Melakukan anotasi dengan prokka**
    ```
-   cd ~/Bioinformatics-User-Meeting/template_submision
+   cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/template_submision
    sbatch annotation.sh
-   cd ~/Bioinformatics-User-Meeting/training/annotation
+   cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/annotation
    ls -lh
    ```
    <img width="501" alt="image" src="https://github.com/hpc-mahameru/Bioinformatics-User-Meeting/assets/57382343/5503011d-49d1-4ded-a074-fd3295efccd6">
