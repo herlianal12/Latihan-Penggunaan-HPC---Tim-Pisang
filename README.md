@@ -57,7 +57,7 @@ Hal yang perlu diperhatikan sebelum hands-on
    cd Latihan-Penggunaan-HPC---Tim-Pisang
    mkdir -p training
    cd training
-   mkdir raw_data
+   mkdir raw_data quality_control
    cd ~/Latihan-Penggunaan-HPC---Tim-Pisang
    ls
    ```
@@ -109,23 +109,22 @@ Hal yang perlu diperhatikan sebelum hands-on
    sbatch contoh.sh
    squeue
    ```
-   <img width="495" alt="Screenshot 2024-05-05 at 19 59 36" src="https://github.com/hpc-mahameru/Bioinformatics-User-Meeting/assets/57382343/5e0aa0e9-ffec-4dc7-ac11-1e8d52897614">
-   
    ```
-   cd ~
-   cd Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control
+   cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control
    ls
    ```
+   <img width="1283" alt="image" src="https://github.com/user-attachments/assets/f0b2f7a2-fc95-4258-a963-31264ec03ec2">
+   **JIKA ADA MASALAH, gunakan mode interaktif***
 
 9. **Bekerja dengan mode interaktif**
    ```
    srun --partition=interactive --pty /bin/bash
    ```
    Perhatikan nama host-nya, berubah menjadi trembesi91/92
+
    ```
-   module load bioinformatics/multiqc/1
-   cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control
-   multiqc .
+   module load bioinformatics/fastqc/0.12.1
+   time fastqc ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/raw_data/* -o ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control
    exit
    ```
 
@@ -134,9 +133,11 @@ Hal yang perlu diperhatikan sebelum hands-on
    cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control
    ls
    ```
-   <img width="594" alt="Screenshot 2024-05-05 at 20 14 12" src="https://github.com/hpc-mahameru/Bioinformatics-User-Meeting/assets/57382343/83d72052-42d0-4c89-b4ca-90eb663ff2f2">
    
-10. **Transfer data dari HPC Mahameru BRIN ke lokal**
+   <img width="1340" alt="image" src="https://github.com/user-attachments/assets/b51cb5fb-ae82-405a-920c-07b53732e5a0">
+
+   
+11. **Transfer data dari HPC Mahameru BRIN ke lokal**
     Memindahkan file html ke folder baru dengan nama html
     ```
     cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control
@@ -145,7 +146,8 @@ Hal yang perlu diperhatikan sebelum hands-on
     cd html
     ls
     ```
-    <img width="638" alt="Screenshot 2024-05-05 at 20 22 34" src="https://github.com/hpc-mahameru/Bioinformatics-User-Meeting/assets/57382343/d79e79da-c759-4d58-8931-41ea83cff3a5">
+    <img width="691" alt="image" src="https://github.com/user-attachments/assets/c911c536-ecab-421c-a102-7490b2fbb03d">
+
     
     Buka terminal atau powershell yang baru untuk transfer file
 
@@ -161,16 +163,14 @@ Hal yang perlu diperhatikan sebelum hands-on
     Fastqc long read
     <img width="1431" alt="Screenshot 2024-05-05 at 20 39 18" src="https://github.com/hpc-mahameru/Bioinformatics-User-Meeting/assets/57382343/a7aa06ca-6fc4-4291-832c-4476293b56d9">
 
-    Multiqc result:
-    <img width="1437" alt="Screenshot 2024-05-05 at 20 38 16" src="https://github.com/hpc-mahameru/Bioinformatics-User-Meeting/assets/57382343/23def188-5ddd-47d9-a1f1-7cd20b1af389">
-
-
 
 ## **OPTIONAL Unicycler assembly tutorial**
 
 1. **Mempersiapkan software/tools menjadi dapat diakses**
    ```
-   module load prokka unicycler quast barrnap
+   module load bioinformatics/prokka-env/1
+   module load bioinformatics/unicycler-env/1
+   module load bioinformatics/quast/5.2.0
    ```
 2. **Membuat direktori baru**
    ```
