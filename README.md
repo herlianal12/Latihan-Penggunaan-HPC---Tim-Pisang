@@ -166,12 +166,13 @@ Hal yang perlu diperhatikan sebelum hands-on
 
 ## **OPTIONAL Unicycler assembly tutorial**
 
-1. **Mempersiapkan software/tools menjadi dapat diakses**
+1. **Membuat environment baru dan menginstall software untuk assembly**
    ```
-   module load bioinformatics/prokka-env/1
-   module load bioinformatics/unicycler-env/1
-   module load bioinformatics/quast/5.2.0
+   mamba create -n assembly
+   mamba activate assembly
+   mamba install -c bioconda prokka=1.14.6 unicycler=0.4.7 quast=5.0.2 barrnap=0.9
    ```
+   
 2. **Membuat direktori baru**
    ```
    cd ~
