@@ -7,4 +7,4 @@
 #SBATCH --mem 1G
 
 
-time fastqc ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/raw_data/* -o Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control
+time fastqc ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/raw_data/* -o ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control
