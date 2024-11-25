@@ -65,7 +65,7 @@ Hal yang perlu diperhatikan sebelum hands-on
    Gunakan perintah ```wget``` untuk mengunduh data.
    Sebelumnya, kembali ke home terlebih dahulu
    ```
-   cd
+   cd ~
    ```
    Download raw data untuk training.
    ```
@@ -82,7 +82,7 @@ Hal yang perlu diperhatikan sebelum hands-on
    ```
    Perhatikan nama host-nya, berubah menjadi trembesi91/92
    ```
-   module load multiqc
+   module load bioinformatics/multiqc/1
    cd Bioinformatics-User-Meeting/training/quality_control
    multiqc .
    exit
