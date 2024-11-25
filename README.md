@@ -13,17 +13,16 @@ Hal yang perlu diperhatikan sebelum hands-on
 1. Masuk ke HPC (Login)
 2. Membuat screen session
 3. Mengkloning repositori
-4. Membuat environment and menginstall packages/software
-5. Membuat direktori
-6. Melihat struktur direktori
-7. Mengunduh data mentah (raw data)
-8. Mengirimkan job dengan sbatch
-9. Menggunakan interaktif job submission
-10. Mentransfer atau mengunduh file dari HPC ke komputer user
+4. Membuat direktori
+5. Mengunduh data mentah (raw data)
+6. Mempersiapkan software/tools menjadi dapat diakses
+7. Mengirimkan job dengan sbatch
+8. Menggunakan interaktif job submission
+9. Mentransfer atau mengunduh file dari HPC ke komputer user
 
 **OPTIONAL Unicycler assembly tutorial**
 
-1. Membuat environment baru dan menginstall packages/software
+1. Mempersiapkan software/tools menjadi dapat diakses
 2. Membuat direktori baru
 3. Melakukan assembly dengan unicycler
 4. Mengevaluasi kualitas assembly dengan quast
@@ -52,49 +51,8 @@ Hal yang perlu diperhatikan sebelum hands-on
    ```
    git clone https://github.com/hpc-mahameru/Bioinformatics-User-Meeting.git
    ```
-4. **Membuat environment (tempat menginstall software) di akun user menggunakan Miniforge3 (mamba dan conda)** \
-   Tools atau software bioinformatics dapat dilihat pada https://anaconda.org/search
-   ```
-   srun --partition=interactive --cpus-per-task=2 --pty bash
-   ```
-   Jika berhasil, Anda akan berpindah ke node interaktif (trembesi91/92).
-   Terdapat banyak module/software yang dapat digunakan, gunakan perintah ```module avail``` untuk melihatnya.
-   ```
-   module avail
-   ```
-   Untuk workshop ini, aktifkan environment module dengan mamba. Untuk itu, load module miniforge3/24.3.0-0 terlebih dahulu.
-   ```
-   module load bioinformatics/miniforge3/24.3.0-0
-   ```
-   Gunakan perintah ```mamba``` untuk mengaktifkan environment aplikasi yang akan digunakan. 
-   ```
-   mamba create -n training_qc
-   mamba init
-   source ~/.bashrc
-   mamba activate training_qc
-   ```
-   Install aplikasi yang digunakan: fastqc, multiqc, dan tree.
-   ```
-   mamba install -c bioconda fastqc multiqc tree
-   ```
 
-   Aktifkan environment bernama training_qc
-   ```
-   mamba activate training_qc
-   ```
-   Untuk melihat software apa saja dan versi berapa yang sudah terinstall
-   ```
-   mamba list
-   ```
-   
-   Untuk mengecek apakah tools sudah bisa digunakan
-   ```
-   fastqc --help
-   multiqc --help
-   ```
-   Untuk lebih mendetail dapat dipelajari link berikut https://conda.io/projects/conda/en/latest/user-guide/getting-started.html dan https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf
-
-5. **Membuat folder proyek untuk menyimpan data input dan output**
+4. **Membuat folder proyek untuk menyimpan data input dan output**
    ```
    cd ~/Bioinformatics-User-Meeting
    mkdir -p training
@@ -102,13 +60,8 @@ Hal yang perlu diperhatikan sebelum hands-on
    mkdir raw_data quality_control
    cd ~
    ```
-6. **Melihat struktur direktori**
-   ```
-   tree Bioinformatics-User-Meeting
-   ```
-   <img width="209" alt="Screenshot 2024-05-05 at 19 32 48" src="https://github.com/hpc-mahameru/Bioinformatics-User-Meeting/assets/57382343/86f77bdf-ae97-4e5d-bbfc-f0d2bc2782a7">
 
-7. **Mengunduh data mentah dengan wget**
+5. **Mengunduh data mentah dengan wget**
    Gunakan perintah ```wget``` untuk mengunduh data.
    Sebelumnya, kembali ke home terlebih dahulu
    ```
@@ -123,13 +76,13 @@ Hal yang perlu diperhatikan sebelum hands-on
    ```
    source: https://training.galaxyproject.org/training-material/topics/assembly/tutorials/unicycler-assembly/tutorial.html
 
-8. **Bekerja dengan mode interaktif**
+6. **Bekerja dengan mode interaktif**
    ```
    srun --partition=interactive --pty /bin/bash
    ```
    Perhatikan nama host-nya, berubah menjadi trembesi91/92
    ```
-   mamba activate training_qc
+   module load multiqc
    cd Bioinformatics-User-Meeting/training/quality_control
    multiqc .
    exit
@@ -195,11 +148,9 @@ Hal yang perlu diperhatikan sebelum hands-on
 
 ## **OPTIONAL Unicycler assembly tutorial**
 
-1. **Membuat environment baru dan menginstall software untuk assembly**
+1. **Mempersiapkan software/tools menjadi dapat diakses**
    ```
-   mamba create -n assembly
-   mamba activate assembly
-   mamba install -c bioconda prokka=1.14.6 unicycler=0.4.7 quast=5.0.2 barrnap=0.9
+   module load prokka unicycler quast barrnap
    ```
 2. **Membuat direktori baru**
    ```
