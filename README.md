@@ -88,8 +88,14 @@ Hal yang perlu diperhatikan sebelum hands-on
    ```
    <img width="452" alt="image" src="https://github.com/user-attachments/assets/5bb3ba3f-6775-4725-8193-ea29a9f32513">
 
+6. **Mempersiapkan software/tools menjadi dapat diakses**
 
-9. **Bekerja dengan menggunakan skrip job**
+   ```
+   module avail
+   module load bioinformatics/fastqc/0.12.1
+   ```
+
+7. **Bekerja dengan menggunakan skrip job**
 
    ```
    cd ~
@@ -110,7 +116,7 @@ Hal yang perlu diperhatikan sebelum hands-on
    ls
    ```
 
-7. **Bekerja dengan mode interaktif**
+9. **Bekerja dengan mode interaktif**
    ```
    srun --partition=interactive --pty /bin/bash
    ```
@@ -129,7 +135,7 @@ Hal yang perlu diperhatikan sebelum hands-on
    ```
    <img width="594" alt="Screenshot 2024-05-05 at 20 14 12" src="https://github.com/hpc-mahameru/Bioinformatics-User-Meeting/assets/57382343/83d72052-42d0-4c89-b4ca-90eb663ff2f2">
    
-11. **Transfer data dari HPC Mahameru BRIN ke lokal**
+10. **Transfer data dari HPC Mahameru BRIN ke lokal**
     Memindahkan file html ke folder baru dengan nama html
     ```
     cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control
