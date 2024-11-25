@@ -169,10 +169,10 @@ Hal yang perlu diperhatikan sebelum hands-on
 1. **Membuat environment baru dan menginstall software untuk assembly**
    ```
    module load bioinformatics/miniforge3/24.3.0-0
-   mamba create -n assembly
+   mamba create -n assembly_test
    mamba init
    source ~/.bashrc
-   mamba activate assembly
+   mamba activate assembly_test
    mamba install -c bioconda prokka=1.14.6 unicycler=0.4.7 quast=5.0.2 barrnap=0.9
    ```
    
