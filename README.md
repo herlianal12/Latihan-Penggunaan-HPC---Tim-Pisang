@@ -22,7 +22,7 @@ Hal yang perlu diperhatikan sebelum hands-on
 
 **OPTIONAL Unicycler assembly tutorial**
 
-1. Mempersiapkan software/tools menjadi dapat diakses
+1. Membuat environment baru dan menginstall software untuk assembly
 2. Membuat direktori baru
 3. Melakukan assembly dengan unicycler
 4. Mengevaluasi kualitas assembly dengan quast
@@ -180,7 +180,7 @@ Hal yang perlu diperhatikan sebelum hands-on
    ```
 3. **Melakukan assembly dengan unicycler**
 
-   ````
+   ```
    cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/template_submision
    sbatch assembly.sh
    ```
