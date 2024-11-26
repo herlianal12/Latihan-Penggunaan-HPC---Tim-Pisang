@@ -117,7 +117,7 @@ Hal yang perlu diperhatikan sebelum hands-on
    <img width="1283" alt="image" src="https://github.com/user-attachments/assets/f0b2f7a2-fc95-4258-a963-31264ec03ec2">
    **JIKA ADA MASALAH, gunakan mode interaktif***
 
-9. **Bekerja dengan mode interaktif**
+8. **Bekerja dengan mode interaktif**
    ```
    srun --partition=interactive --pty /bin/bash
    ```
@@ -138,7 +138,7 @@ Hal yang perlu diperhatikan sebelum hands-on
    <img width="1340" alt="image" src="https://github.com/user-attachments/assets/b51cb5fb-ae82-405a-920c-07b53732e5a0">
 
    
-11. **Transfer data dari HPC Mahameru BRIN ke lokal**
+9. **Transfer data dari HPC Mahameru BRIN ke lokal**
     Memindahkan file html ke folder baru dengan nama html
     ```
     cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control
@@ -154,7 +154,7 @@ Hal yang perlu diperhatikan sebelum hands-on
 
     Contoh:
     ```
-    scp -r lina008@login2.hpc.brin.go.id:~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control/html Downloads
+    scp -r <usernama>@login2.hpc.brin.go.id:~/Latihan-Penggunaan-HPC---Tim-Pisang/training/quality_control/html Downloads
     ```
     Buka masing-masing html file dengan double klik report qc dari masing-masing sampel yang ada di folder Downloads.
 
