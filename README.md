@@ -102,6 +102,7 @@ Hal yang perlu diperhatikan sebelum hands-on
    ```
    cd ~/Latihan-Penggunaan-HPC---Tim-Pisang/template_submision
    less contoh.sh
+   #tekan q untuk keluar
    ```
    <img width="1219" alt="image" src="https://github.com/user-attachments/assets/a6954023-660d-43d0-acd2-a70d1e20aeaa">
 
