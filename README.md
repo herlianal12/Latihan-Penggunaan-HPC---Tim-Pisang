@@ -174,7 +174,7 @@ Hal yang perlu diperhatikan sebelum hands-on
    mamba init
    source ~/.bashrc
    mamba activate assembly_test
-   mamba install -c bioconda prokka=1.14.6 unicycler=0.4.7 quast=5.0.2 barrnap=0.9
+   mamba install -c bioconda prokka unicycler quast barrnap
    ```
    
 2. **Membuat direktori baru**
